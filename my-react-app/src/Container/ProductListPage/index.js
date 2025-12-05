@@ -2,14 +2,14 @@ import React, { useState, useCallback, useEffect } from "react";
 import { productData } from "./data";
 import "./style.css";
 import { MyDebounce } from "../../utility/commonUtils";
+import { FilterProducts } from "../../components/FilterProducts";
 export const ProductListPage = () => {
   const [productList, setProductList] = useState(productData);
   const [searchText, setSearchText] = useState("");
   const debouncedSearchText = MyDebounce(searchText, 1000);
-
   const performSearch = useCallback(
-    (text) => {
-      let searchedProducts = productList.filter((obj) => {
+    (text, products = productList) => {
+      let searchedProducts = products.filter((obj) => {
         return Object.values(obj).some(
           (val) => val !== null && String(val).toLowerCase().includes(text)
         );
@@ -24,12 +24,13 @@ export const ProductListPage = () => {
   };
 
   useEffect(() => {
-    if (debouncedSearchText) {
-      performSearch(debouncedSearchText);
-    } else {
-      setProductList(productData);
-    }
+    if (debouncedSearchText) performSearch(debouncedSearchText);
+    else setProductList(productData);
   }, [debouncedSearchText]);
+
+  const onFilterChange = (filterValue) => {
+    performSearch(filterValue, productData);
+  };
 
   return (
     <>
@@ -39,6 +40,12 @@ export const ProductListPage = () => {
             id="search"
             placeHolder="search items here"
             onChange={handleSearch}
+          />
+        </div>
+        <div>
+          <FilterProducts
+            onFilterChange={onFilterChange}
+            productList={productData}
           />
         </div>
         <div className="cards-container">
