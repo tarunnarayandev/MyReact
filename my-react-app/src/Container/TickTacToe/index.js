@@ -93,7 +93,7 @@ export const TickTacToe = ({ size = 3 }) => {
         })}
         {winner && winner !== "draw" && <h2>winner:{winner}</h2>}
         {winner === "draw" && <h2>It's a draw!</h2>}
-        {!winner && <h2>turn:{turn}</h2>}
+        {!winner && <h2>turn: {turn}</h2>}
         
       </div>
       <button

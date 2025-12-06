@@ -5,10 +5,11 @@
 }
 
 .boxes-y {
-    padding: 8px;
+    padding: 0;
 }
 
 .boxes-x {
+    margin: 8px;
     text-align: center;
     font-size: xx-large;
     height: 40px;
