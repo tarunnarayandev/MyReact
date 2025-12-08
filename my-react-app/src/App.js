@@ -13,6 +13,10 @@ const TickTacToe = React.lazy(() =>
   }))
 );
 
+const ConsultDetails = React.lazy(() => import("./Container/ConsultDetails").then((m) => ({
+  default: m.ConsultDetails,
+})))
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -21,6 +25,7 @@ export default function App() {
           <Route exact path="/" component={() => <h1>Home</h1>} />
           <Route path="/products" component={ProductListPage} />
           <Route path="/tick-tac-toe" component={TickTacToe} />
+          <Route path="/consult-details" component={ConsultDetails} />
         </Switch>
       </Suspense>
     </BrowserRouter>
