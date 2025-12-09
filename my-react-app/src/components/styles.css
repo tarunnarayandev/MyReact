@@ -13,3 +13,43 @@ button:hover {
     background-color: rgb(249, 174, 244);
     transform: scale(1.1);
 }
+
+.accord-child-hid {
+    opacity: 0;
+    max-height: 0;
+}
+
+
+.accord-child-show {
+    opacity: 1;
+    max-height: 2500px;
+    transform:  translate3d(0, 0, 0);;
+    transition: all .4s;
+    z-index: 2;
+}
+
+.accordion {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #ffffff;
+  border-radius: 8px;
+
+  /* 3D depth */
+  box-shadow:
+    0 2px 4px rgba(0,0,0,0.15),
+    0 6px 12px rgba(0,0,0,0.10);
+
+  transition:
+    transform 200ms ease,
+    box-shadow 200ms ease;
+}
+
+/* Slight 3D lift on hover */
+.accordion:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 8px rgba(0,0,0,0.20),
+    0 10px 18px rgba(0,0,0,0.12);
+}

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { JobCard } from "../../components/jobCard"
-
+import { Accordion } from "../../components/Accordion"
 
 export const NewsBoard = (() => {
     const JOB_STORIES_URL = "https://hacker-news.firebaseio.com/v0/jobstories.json"
@@ -68,6 +68,7 @@ export const NewsBoard = (() => {
 
     return <>
     <p>Hacker News Jobs Board</p>
+    <Accordion data={{title: "accord title"}}><div>Tarun ANrayan</div></Accordion>
     { jobs?.map((item, index) => {
         console.log("item", item)
         return <JobCard data={item} />
