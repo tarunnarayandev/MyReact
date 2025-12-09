@@ -12,6 +12,13 @@ code {
     monospace;
 }
 
+input {
+  padding: 8px;
+}
+
+.margin8{
+  margin: 8px
+}
 .marginLeft16 {
   margin-left: 16px;
 }
@@ -22,6 +29,10 @@ code {
 
 .paddingLeft16 {
   margin-left: 16px;
+}
+
+.padding8 {
+  padding: 8px;
 }
 
 .flex {

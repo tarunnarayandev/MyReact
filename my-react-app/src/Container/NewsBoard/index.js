@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import { JobCard } from "../../components/jobCard"
 import { Accordion } from "../../components/Accordion"
-
+import { FlightBooking } from "../../components/flightBooking"
+import { TabGenerator } from "../../components/TabGenerator"
 export const NewsBoard = (() => {
     const JOB_STORIES_URL = "https://hacker-news.firebaseio.com/v0/jobstories.json"
     let PER_PAGE = 6;
@@ -68,6 +69,8 @@ export const NewsBoard = (() => {
 
     return <>
     <p>Hacker News Jobs Board</p>
+    <TabGenerator rows={4} colums={6} />
+    <FlightBooking />
     <Accordion data={{title: "accord title"}}><div>Tarun ANrayan</div></Accordion>
     { jobs?.map((item, index) => {
         console.log("item", item)
