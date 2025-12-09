@@ -17,6 +17,12 @@ const ConsultDetails = React.lazy(() => import("./Container/ConsultDetails").the
   default: m.ConsultDetails,
 })))
 
+const NewsBoard = React.lazy(() => import("./Container/NewsBoard").then((m) => (
+  {
+    default: m.NewsBoard
+  }
+)))
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -26,6 +32,7 @@ export default function App() {
           <Route path="/products" component={ProductListPage} />
           <Route path="/tick-tac-toe" component={TickTacToe} />
           <Route path="/consult-details" component={ConsultDetails} />
+          <Route path="/news" component={NewsBoard} />
         </Switch>
       </Suspense>
     </BrowserRouter>

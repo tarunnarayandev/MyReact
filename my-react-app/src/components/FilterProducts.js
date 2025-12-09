@@ -1,9 +1,5 @@
-import React from "react";
-
 export const FilterProducts = ({onFilterChange, productList}) => {
-    console.log(">>>>>productData", productList)
     const types = [...new Set(productList.map(item => item.type))]
-    const costs = [...new Set(productList.map(item => item.cost))]
 
     const handleTypeChange = (e) => {
         onFilterChange(e.target.value);
